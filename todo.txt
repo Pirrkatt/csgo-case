@@ -1,0 +1,3 @@
+fix stattrak text
+add all weapons from case
+make it not possible to roll while rolling

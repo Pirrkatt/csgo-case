@@ -1,0 +1,168 @@
+@import url(https://fonts.googleapis.com/css?family=Alkatra);
+@import url(https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap);
+body {
+    background-image: url("background.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 2134px 1045px;
+    /* background-size: cover; */
+}
+
+.container {
+    position: absolute;
+    width: 700px;
+    height: 100px;
+    top: 50%;
+    left: 30%;
+}
+
+.container-box {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 1px;
+    border: 1px solid #3c3759;
+}
+
+.slots {
+    width: 9999999999999999999px;
+    max-width: 999999999999999999px;
+    height: inherit;
+    background: #191726;
+}
+
+.container-box::before {
+    content: "";
+    position: absolute;
+    border: none;
+    z-index: 10;
+    width: 5px;
+    height: 100%;
+    left: 50%;
+    background: #d16266;
+}
+
+.item {
+    display: inline-block;
+    margin: 4px 0px 0.5px 5px;
+    width: 85px;
+    height: 88px;
+    border: 1px solid #70677c;
+    background: #14202b;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.blue_item_color {
+    border-bottom: 4px solid #4b69ff;
+}
+
+.purple_item_color {
+    border-bottom: 4px solid #8847ff;
+}
+
+.pink_item_color {
+    border-bottom: 4px solid #d32ce6;
+}
+
+.red_item_color {
+    border-bottom: 4px solid #eb4b4b;
+}
+
+.yellow_item_color {
+    border-bottom: 4px solid #ffd700;
+}
+
+.weapon_quality {
+    position: relative;
+    top: 70px;
+    margin-left: 2px;
+    color: gray;
+    font-family: "Alkatra";
+    font-size: 0.7em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.stattrak_class {
+    position: relative;
+    bottom: 20px;
+    text-align: right;
+    margin: 2px 3px 0 0;
+    /* top right bottom left */
+    color: orangered;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.7em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+.winning-item {
+    border: 2px solid #66b233;
+    position: relative;
+    top: -1px;
+}
+
+.inventory {
+    position: relative;
+    margin: 1em auto;
+    height: auto;
+    max-height: 250px;
+    border: 2px solid #1c3344;
+    background: #0e1a23;
+    overflow: hidden;
+}
+
+.inventory_text {
+    position: relative;
+    left: 40%;
+    font-family: "Alkatra";
+    font-size: 1.4em;
+    text-decoration: underline wavy #243d50;
+    color: #4e89b6;
+    /* border: 2px ridge black; */
+    /* border-radius: 10px; */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.inventory>.item {
+    position: relative;
+    float: left;
+    cursor: pointer;
+    margin: 4px 5px 1px 3px;
+    left: 1em;
+}
+
+.inventory>.item:hover {
+    background-size: 90%;
+    background-color: #182a38;
+}
+
+.inventory>.item:active {
+    height: 500px;
+    width: 500px;
+    position: fixed;
+    left: 5em;
+    /* border: 5px solid #ff0bf3; */
+    z-index: 5;
+}
