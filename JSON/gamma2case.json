@@ -1,0 +1,59 @@
+{
+    "blue": [
+        ["G3SG1 | Ventilator", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_g3sg1_gs_g3sg1_ventilator_light_large.5cd3643d4d9cd0599e25a1302e788611bd9a0023.png"],
+        ["XM1014 | Slipstream", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_xm1014_hy_xm1014_fractal_blue_light_large.e9720fb7b5928db8bcf79d62850af5bf475b9ec5.png"],
+        ["UMP-45 | Briefing", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ump45_cu_ump45_metritera_light_large.46ac4388a9651c555ec6849358b85f60a87c328d.png"],
+        ["Negev | Dazzle", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_negev_hy_negev_dazzle_light_large.3558ece2a70252dcaa8ea9e324539ae1a4fc1bc0.png"],
+        ["CZ75-Auto | Imprint", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_cz75a_gs_cz75_tread_light_large.8c276db730bb33477aaa52f7a23825f295e14364.png"],
+        ["Five-SeveN | Scumbria", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_fiveseven_aq_five_seven_scumbria_light_large.bc05fc6435b84525a0ab140bc72e032a98dab710.png"],
+        ["P90 | Grim", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_p90_cu_p90_grimm_light_large.59514d7b54f637f314329bb3fef1c7ffd1b153ba.png"]
+    ],
+    "purple": [
+        ["SCAR-20 | Powercore", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_scar20_gs_scar20_powercore_light_large.74bcd65b1a4a52dd397ede5aa59b860ca4c38939.png"],
+        ["MAG-7 | Petroglyph", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mag7_cu_mag7_tribal_light_large.c226728af447f07808ea5954eb9a24528092d972.png"],
+        ["SG 553 | Triarch", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_sg556_cu_sg556_triarch_light_large.3ea74bea530adda100d25911372ca313ea99453a.png"],
+        ["Glock-18 | Weasel", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_glock_cu_glock18_weasel_light_large.e02e6e5196ebdee47c595799ff011dd645147505.png"],
+        ["Desert Eagle | Directive", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_deagle_aq_desert_eagle_constable_light_large.fb2f2673dd3997a21bff9129e0d2e294c03095e8.png"]
+    ],
+    "pink": [
+        ["MP9 | Airlock", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_mp9_cu_mp9_narcis_light_large.c63eaf3fab8c65ec3ab22da8205cbe3c51366d7a.png"],
+        ["AUG | Syd Mead", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_aug_gs_aug_syd_mead_light_large.333597e0555639f5d77541c363a9bb38d95055f3.png"],
+        ["Tec-9 | Fuel Injector", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_tec9_gs_tec9_supercharged_light_large.e3ebc20f10eae02790fe95703b6099acca1d1809.png"]
+    ],
+    "red": [
+        ["FAMAS | Roll Cage", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_famas_gs_famas_rally_light_large.538baee44eb772de95029e4267ea9c41101bbc94.png"],
+        ["AK-47 | Neon Revolution", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_ak47_cu_ak47_anarchy_light_large.6e98f0c6fcb81aaeca03c56eed68962f50c9ef94.png"]
+    ],
+    "yellow": [
+        ["M9 Bayonet | Freehand", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_m9_bayonet_am_marked_up_90_light_large.30a346e62c77a9552fe7ce89eca7c44e018aafd5.png"],
+        ["M9 Bayonet | Bright Water", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_m9_bayonet_hy_ocean_knife_90_light_large.7c349b48ff79eb591eaa741aff78a0e086feaa4d.png"],
+        ["M9 Bayonet | Black Laminate", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_m9_bayonet_cu_m9_bay_stonewash_light_large.addebdf2a1eb13e40ff7102e7a918d116653414b.png"],
+        ["M9 Bayonet | Lore", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_m9_bayonet_cu_m9_bay_lore_light_large.b4bfa26d570d440ee4c04244605a81031909da2f.png"],
+        ["M9 Bayonet | Autotronic", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_m9_bayonet_gs_m9_bay_autotronic_light_large.f81f68f78b0b40717602fc88f62b4d7af346c430.png"],
+        ["M9 Bayonet | Gamma Doppler", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_m9_bayonet_am_gamma_doppler_phase1_light_large.4980cb2bb09e19a48a04ae19a0e6353426e81cce.png"],
+        ["Karambit | Bright Water", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_karambit_hy_ocean_knife_light_large.f108e6440259472084635566f62d7497b9d5ab51.png"],
+        ["Karambit | Freehand", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_karambit_am_marked_up_fine_light_large.8814a38afa2383489a723019fc9e6e43f021f047.png"],
+        ["Karambit | Lore", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_karambit_cu_karam_lore_light_large.7090aea57b3a2abd82e09f0cdb840ac72f41df73.png"],
+        ["Karambit | Black Laminate", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_karambit_cu_karam_stonewash_light_large.a45dfc7db5703c23ef3e5733fcc4a7b2a9bf6d73.png"],
+        ["Karambit | Autotronic", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_karambit_gs_karam_autotronic_light_large.5af6c108ce38f71f0964f1bbd06bc48c1d3e5462.png"],
+        ["Karambit | Gamma Doppler", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_karambit_am_gamma_doppler_phase1_light_large.769cf2ab676ea2a7d7322c258f57bac8dca00336.png"],
+        ["Gut Knife | Freehand", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_am_marked_up_light_large.08dac4cfbf7b626df37bb2b6ffd3d07d2fc86988.png"],
+        ["Gut Knife | Black Laminate", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_cu_gut_stonewash_light_large.52a1c223ee5d85ddb2242c75a67c1f2f49b0e0b9.png"],
+        ["Gut Knife | Autotronic", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_gs_gut_autotronic_light_large.160e79d868da6ebb84c52e835aaf24ab9c6334f1.png"],
+        ["Gut Knife | Bright Water", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_hy_ocean_knife_light_large.649f890d55e6ee2987e988e44a0f52e1a5020486.png"],
+        ["Gut Knife | Lore", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_cu_gut_lore_light_large.5cf5a77978675bd3d276a86017e6d1fcacd7bf00.png"],
+        ["Gut Knife | Gamma Doppler", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_gut_am_gamma_doppler_phase1_light_large.aa0ee6d430814b265636f404ab85553e71f3450d.png"],
+        ["Flip Knife | Black Laminate", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_flip_cu_flip_stonewash_light_large.e6f71d193d2965b443ede7015911feedfea6e5a8.png"],
+        ["Flip Knife | Freehand", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_flip_am_marked_up_light_large.6420438f1930c72f9aee1fb6d2e1e41238caf340.png"],
+        ["Flip Knife | Bright Water", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_flip_hy_ocean_knife_light_large.6d35f9bc8d0ab2da7112155cf37ef782e542ef31.png"],
+        ["Flip Knife | Autotronic", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_flip_gs_flip_autotronic_light_large.882d012ef1e758c9e323dd5d6202c49fbe894e05.png"],
+        ["Flip Knife | Lore", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_flip_cu_flip_lore_light_large.df03b3186c105676470d2ac73e4bea375fedbf77.png"],
+        ["Flip Knife | Gamma Doppler", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_knife_flip_am_gamma_doppler_phase1_light_large.7bf92c117841e553340bc5c0d0266cb458b92249.png"],
+        ["Bayonet | Bright Water", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_hy_ocean_knife_light_large.d262ade9c249afcfbeeacf19deef49ccb0049c1a.png"],
+        ["Bayonet | Black Laminate", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_cu_bayonet_stonewash_light_large.0f931ca831c405927983d5b2ca3120aa9363d7d3.png"],
+        ["Bayonet | Freehand", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_am_marked_up_light_large.c2a4dbca9338c1a5ffaa246715696f92168a49bc.png"],
+        ["Bayonet | Autotronic", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_gs_bayonet_autotronic_light_large.4b7f809f4ee434dff8f270b041100012f39c5ebe.png"],
+        ["Bayonet | Lore", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_cu_bayonet_lore_light_large.372c7e0ec654f3be5d53e87cbbac3ab160c8c76e.png"],
+        ["Bayonet | Gamma Doppler", "https://steamcdn-a.akamaihd.net/apps/730/icons/econ/default_generated/weapon_bayonet_am_gamma_doppler_phase1_light_large.02bbfec15811bc1679479107af0cf5c6652e40f1.png"]
+    ]
+}
