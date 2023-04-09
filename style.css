@@ -10,7 +10,7 @@ body {
 }
 
 .roll-button {
-    background: linear-gradient(90deg, #36563f, #234940) padding-box, linear-gradient(90deg, #69e755, #00a15b) border-box;
+    background: linear-gradient(90deg, #365656, #234649) padding-box, linear-gradient(90deg, #55d1e7, #00a171) border-box;
     border: 0.125rem solid transparent;
     border-radius: 3px;
     height: 2.5rem;
@@ -22,10 +22,11 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    opacity: 1;
 }
 
 .roll-button:before {
-    background: linear-gradient(90deg, #69e755, #00a15b) border-box;
+    background: linear-gradient(90deg, #55e78d, #0089a1) border-box;
     content: "";
     display: block;
     height: calc(100% + 2px);
@@ -49,6 +50,12 @@ body {
     text-transform: uppercase;
     color: white;
     z-index: 1;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .container {
@@ -204,9 +211,11 @@ img {
 .inventory>.item:active {
     height: 500px;
     width: 500px;
+    top: 10%;
+    left: 70%;
     position: fixed;
-    left: 5em;
-    /* border: 5px solid #ff0bf3; */
+    justify-content: center;
+    align-items: center;
     z-index: 5;
 }
 
@@ -336,7 +345,8 @@ input:checked+.slider:before {
 
 /* SIMULATING/LOADING EFFECT */
 
-.simulating-text {
+
+/* .sim-text {
     visibility: hidden;
     position: absolute;
     font-family: "Alkatra";
@@ -344,7 +354,6 @@ input:checked+.slider:before {
     left: 38%;
     top: -0.5%;
     color: rgb(91, 209, 166);
-    /* text-shadow: 1px 1px 5px black; */
     text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -354,7 +363,7 @@ input:checked+.slider:before {
     user-select: none;
 }
 
-.lds-roller {
+.sim-loading {
     visibility: hidden;
     display: inline-block;
     position: relative;
@@ -364,12 +373,12 @@ input:checked+.slider:before {
     top: 7px;
 }
 
-.lds-roller div {
-    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+.sim-loading div {
+    animation: sim-loading 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
     transform-origin: 40px 40px;
 }
 
-.lds-roller div:after {
+.sim-loading div:after {
     content: "";
     display: block;
     position: absolute;
@@ -381,83 +390,83 @@ input:checked+.slider:before {
     border: 2px solid;
 }
 
-.lds-roller div:nth-child(1) {
+.sim-loading div:nth-child(1) {
     animation-delay: -0.036s;
 }
 
-.lds-roller div:nth-child(1):after {
+.sim-loading div:nth-child(1):after {
     top: 63px;
     left: 63px;
 }
 
-.lds-roller div:nth-child(2) {
+.sim-loading div:nth-child(2) {
     animation-delay: -0.072s;
 }
 
-.lds-roller div:nth-child(2):after {
+.sim-loading div:nth-child(2):after {
     top: 68px;
     left: 56px;
 }
 
-.lds-roller div:nth-child(3) {
+.sim-loading div:nth-child(3) {
     animation-delay: -0.108s;
 }
 
-.lds-roller div:nth-child(3):after {
+.sim-loading div:nth-child(3):after {
     top: 71px;
     left: 48px;
 }
 
-.lds-roller div:nth-child(4) {
+.sim-loading div:nth-child(4) {
     animation-delay: -0.144s;
 }
 
-.lds-roller div:nth-child(4):after {
+.sim-loading div:nth-child(4):after {
     top: 72px;
     left: 40px;
 }
 
-.lds-roller div:nth-child(5) {
+.sim-loading div:nth-child(5) {
     animation-delay: -0.18s;
 }
 
-.lds-roller div:nth-child(5):after {
+.sim-loading div:nth-child(5):after {
     top: 71px;
     left: 32px;
 }
 
-.lds-roller div:nth-child(6) {
+.sim-loading div:nth-child(6) {
     animation-delay: -0.216s;
 }
 
-.lds-roller div:nth-child(6):after {
+.sim-loading div:nth-child(6):after {
     top: 68px;
     left: 24px;
 }
 
-.lds-roller div:nth-child(7) {
+.sim-loading div:nth-child(7) {
     animation-delay: -0.252s;
 }
 
-.lds-roller div:nth-child(7):after {
+.sim-loading div:nth-child(7):after {
     top: 63px;
     left: 17px;
 }
 
-.lds-roller div:nth-child(8) {
+.sim-loading div:nth-child(8) {
     animation-delay: -0.288s;
 }
 
-.lds-roller div:nth-child(8):after {
+.sim-loading div:nth-child(8):after {
     top: 56px;
     left: 12px;
 }
 
-@keyframes lds-roller {
+@keyframes sim-loading {
     0% {
         transform: rotate(0deg);
     }
     100% {
         transform: rotate(360deg);
     }
-}
+} */
