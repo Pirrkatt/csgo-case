@@ -31,7 +31,7 @@ var drop_chance = {
     purple: { min: 7989, max: 9587 },
     pink: { min: 9588, max: 9908 },
     red: { min: 9909, max: 9973 },
-    yellow: { min: 9974, max: 10000 },
+    yellow: { min: 9974, max: 10000 }, // 0.27%?
 };
 
 var quality = {
@@ -85,6 +85,32 @@ function resetInventory() {
     }
 }
 
+var simulateKnife = false
+var simulations = 1
+var keyPrice = 2.5
+
+function simulateKnifeToggle() {
+    return simulateKnife = document.getElementById("switchToggle").checked;
+}
+
+function simText(param) {
+    // console.log($('.simulating-text').css("visibility")
+    $('.simulating-text').css({
+        "visibility": param
+    });
+    $('.lds-roller').css({
+        "visibility": param
+    });
+}
+
+function getMoneySpent() {
+    var string = "Total Cases Opened for a Knife: <span class='color-white'>" + simulations + "</span>"
+    string = string + "<br>" + "Total Money Spent on Keys:  <span class='color-green'>" + (simulations * keyPrice) + "$</span>"
+    string = string + "<br>" + "Knife Value: <span class='color-red'>" + "Unknown</span>"
+    var moneyText = '<div class="money-spent-text">' + string + '</div>';
+    return moneyText
+}
+
 function GenerateDrop() {
     $('.slots').css({ // resets position of wheel
         transition: "sdf",
@@ -92,6 +118,9 @@ function GenerateDrop() {
     });
 
     resetCards()
+    if (simulateKnife) {
+        simText("visible")
+    }
     for (var i = 0; i < 90; i++) {
         var rand = randomInt(1, 10000);
 
@@ -105,6 +134,16 @@ function GenerateDrop() {
                     var winningSkin = skin_name
                     var winningImage = skin_image
                     var winningColor = x
+
+                    if (simulateKnife) {
+                        //show simulating text...
+                        if (!(rand >= 9974)) {
+                            simulations += 1
+                            return GenerateDrop()
+                        } else {
+                            $(getMoneySpent()).appendTo('.sim-container');
+                        }
+                    }
                 }
             }
         }
@@ -121,7 +160,9 @@ function OpenCase(skinName, skinImage, skinColor) {
     $('.slots').css({
         transition: "all 8s cubic-bezier(.08,.6,0,1)"
     });
-
+    if (simulateKnife) {
+        simText("hidden")
+    }
     setTimeout(function() {
         if (tempCounter >= 7) {
             resetInventory()
@@ -130,10 +171,8 @@ function OpenCase(skinName, skinImage, skinColor) {
         $('#CardNumber77').addClass('winning-item');
         var win_element = "<div id='added_inventory" + tempCounter + "' class='item " + skinColor + "_item_color' style='background-image: url(" + skinImage + ")'></div>";
         $(win_element).appendTo('.inventory');
-        var quality = getQuality()
-        $(quality).appendTo('#added_inventory' + tempCounter);
-        var stattrak = getStatTrak()
-        $(stattrak).appendTo('#added_inventory' + tempCounter);
+        $(getQuality()).appendTo('#added_inventory' + tempCounter);
+        $(getStatTrak()).appendTo('#added_inventory' + tempCounter);
         tempCounter += 1;
     }, 8500);
     // $('.slots').css('margin-left', -(tempCounter + 1) * 6770 + 'px');

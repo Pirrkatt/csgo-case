@@ -10,22 +10,41 @@
 </head>
 
 <body>
+    <div class="simulating-text">SIMULATING</div>
+    <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="sim-container">
+        <div class="knife-sim-text">Knife Simulation</div>
+        <label class="switch">
+            <input id="switchToggle" type="checkbox" onclick="simulateKnifeToggle()" unchecked>
+            <span class="slider"></span>
+        </label>
+    </div>
+
     <div class="container">
         <div class="container-box">
             <div class="slots"></div>
         </div>
         <br>
         <center>
-            <button onclick="GenerateDrop();">Roll</button>
-            <button onclick="location.reload()">Reset</button>
+            <button class="roll-button" onclick="GenerateDrop();">
+                <span class="open-text">OPEN</span>
+            </button>
+            <!-- <button onclick="location.reload()">Reset</button> -->
         </center>
         <div class="inventory">
             <div class="inventory_text">Recent Drops</div>
         </div>
     </div>
-
-
-
 
     <script src="caseopening.js"></script>
     <script src="jquery-3.6.4.min.js" language="javascript" type="text/javascript"></script>

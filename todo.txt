@@ -1,2 +1,4 @@
-add all weapons from case
 make it not possible to roll while rolling
+simulateknife button
+reset moneytext
+add "simulating" text while simulating
