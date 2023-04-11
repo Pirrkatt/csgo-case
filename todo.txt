@@ -3,3 +3,4 @@ enlarge picture
 help;
 fetch steam marketplace api
 fix background when running on live server
+make everything responsive?

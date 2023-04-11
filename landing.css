@@ -1,0 +1,63 @@
+@import url(https://fonts.googleapis.com/css?family=Alkatra);
+@import url(https://fonts.googleapis.com/css2?family=Oswald);
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans);
+body {
+    height: 100%;
+    margin: 0;
+}
+
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(1px);
+    z-index: -1;
+}
+
+.case-area {
+    position: absolute;
+    /* display: flex; */
+    width: 700px;
+    height: 80%;
+    border: 1px solid;
+    left: 60%;
+    top: 10%;
+}
+
+.choose-case-text {
+    position: relative;
+    text-align: center;
+    font-family: "Nono-Sans", sans-serif;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+.case {
+    scale: 0.7;
+    margin: 0;
+    padding: 20px;
+}
+
+#case-gamma2 {
+    position: relative;
+    /* left: 10%; */
+    /* height: 20%; */
+    /* width: 20%; */
+    border: 1px solid black;
+}
+
+.case-aura {
+    position: relative;
+    left: 10%;
+    bottom: 24%;
+    width: 160px;
+    height: 110px;
+    /* border: 1px solid black; */
+}
+
+.case-aura:hover {
+    cursor: pointer;
+    box-shadow: 0 0 50px 5px yellow, inset 0 0 600px 0px yellow;
+}

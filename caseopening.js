@@ -1,18 +1,41 @@
-var gamma2; // LOCALHOST
-fetch('./JSON/gamma2case.json')
-    .then((response) => response.json())
-    .then((json) => gamma2 = json);
+var gamma2;
 
-// https://steamcommunity.com/market/priceoverview/?appid=730&currency=1&market_hash_name=StatTrak%E2%84%A2%20M4A1-S%20|%20Hyper%20Beast%20(Minimal%20Wear)
-// $(window).on('load', function() {
-//     $.getJSON('./JSON/gamma2case.json', function(json) {
-//         gamma2 = json
-//     })
+async function loadGamma2() {
+    gamma2 = await (await fetch('./JSON/case-gamma2.json')).json();
+}
 
-//     $.getJSON('https://steamcommunity.com/market/priceoverview/?appid=730&currency=1&market_hash_name=StatTrak%E2%84%A2%20M4A1-S%20|%20Hyper%20Beast%20(Minimal%20Wear)', function(data) {
-//         console.log(data);
-//     });
-// });
+$(window).on('load', async function() {
+    loadGamma2();
+    try {
+        const response = await fetch("./steam.php?url=" + encodeURIComponent('https://steamcommunity.com/market/priceoverview/?appid=730&currency=1&market_hash_name=StatTrak%E2%84%A2%20M4A1-S%20|%20Hyper%20Beast%20(Minimal%20Wear)'));
+        if (response.status == 200) {
+            const jsonData = await response.json();
+            console.log("Data", jsonData.median_price);
+        } else {
+            console.log(await response.text());
+        }
+
+    } catch (e) {
+        console.error("Error", e)
+    }
+});
+
+// const response = await fetch("./steam.php?url=" + encodeURIComponent('https://steamcommunity.com/market/priceoverview/?appid=730&currency=1&market_hash_name=StatTrak%E2%84%A2%20M4A1-S%20|%20Hyper%20Beast%20(Minimal%20Wear)'));
+
+// async function getItemPrice(uu) {
+//     try {
+//         const response = await fetch("./steam.php?url=" + uu);
+//         if (response.status == 200) {
+//             const jsonData = await response.json();
+//             console.log(jsonData.median_price);
+//         } else {
+//             console.log(await response.text());
+//         }
+
+//     } catch (e) {
+//         console.error("Error", e)
+//     }
+// }
 
 var drop_chance = {
     blue: { min: 1, max: 7988 },
@@ -23,15 +46,36 @@ var drop_chance = {
 };
 
 var quality = {
-    WW: { min: 1, max: 790 },
-    BS: { min: 791, max: 1786 },
-    FT: { min: 1787, max: 6100 },
-    MW: { min: 6101, max: 8560 },
-    FN: { min: 8561, max: 10000 },
+    "WW": { min: 1, max: 790 },
+    "BS": { min: 791, max: 1786 },
+    "FT": { min: 1787, max: 6100 },
+    "MW": { min: 6101, max: 8560 },
+    "FN": { min: 8561, max: 10000 },
 };
 
-var tempCounter = 0;
+function getItemUrl(itemName, stattrak, quality) {
+    var link = "";
 
+    if (stattrak) {
+        link = link + "StatTrak%E2%84%A2%20"
+    }
+
+    link = link + itemName
+
+    var arr = {
+        "WW": "Well-Worn",
+        "BS": "Battle-Scarred",
+        "FT": "Field-Tested",
+        "MW": "Minimal Wear",
+        "FN": "Factory New",
+    }
+
+    var qualityName = " (" + arr[quality] + ")"
+    link = link + qualityName
+    link = encodeURIComponent('https://steamcommunity.com/market/priceoverview/?appid=730&currency=1&market_hash_name=' + link)
+    console.log(link);
+    return link
+}
 
 function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
@@ -46,30 +90,33 @@ function getQuality() {
     var rand = randomInt(1, 10000)
     for (grade in quality) {
         if (rand >= quality[grade].min && rand <= quality[grade].max) {
-            var text = '<div class="weapon_quality">' + grade + '</div>';
-            return text
+            return grade
         }
     }
 }
 
 function getStatTrak() {
     var rand = randomInt(1, 10)
-    if (rand == 1) {
-        var stattrak = '<div class="stattrak_class">StatTrak&trade;</div>';
-        return stattrak
+    if (rand === 1) {
+        return true
     }
+    return false
 }
+
+var random_array = [];
+var tempCounter = 0;
 
 var simulateKnife = false
 var currently_rolling = false
 var simulationCount = 1
 var keyPrice = 2.5
 
+
 function simulateKnifeToggle() {
     return simulateKnife = document.getElementById("switchToggle").checked;
 }
 
-function moneySpent(param) {
+function moneySpent(param, itemPrice) {
     if (param === "add") {
         var string = "Total Cases Opened for a Knife: <span class='color-white'>" + simulationCount + "</span>"
         string = string + "<br>" + "Total Money Spent on Keys:  <span class='color-green'>" + (simulationCount * keyPrice) + "$</span>"
@@ -78,6 +125,7 @@ function moneySpent(param) {
         return moneyText
     }
     if (param === "remove") {
+        simulationCount = 1
         $('.money-spent-text').remove();
     }
 }
@@ -106,8 +154,6 @@ function clickOpen() {
     moneySpent("remove")
     return GenerateDrop()
 }
-
-var random_array = [];
 
 function GenerateDrop() {
     for (var i = 0; i < 90; i++) { // resets cards
@@ -145,13 +191,15 @@ function GenerateDrop() {
         }
         $(element).appendTo('.slots');
     }
-
+    var stattrak = getStatTrak()
+    var quality = getQuality()
+        // getItemUrl(winningSkin, stattrak, quality)
     setTimeout(function() {
-        OpenCase(winningSkin, winningImage, winningColor);
+        OpenCase(winningSkin, winningImage, winningColor, stattrak, quality);
     }, 500);
 }
 
-function OpenCase(skinName, skinImage, skinColor) {
+function OpenCase(skinName, skinImage, skinColor, isStattrak, qualityGrade) {
     $('.slots').css({
         transition: "all 8s cubic-bezier(.08,.6,0,1)"
     });
@@ -164,11 +212,17 @@ function OpenCase(skinName, skinImage, skinColor) {
             }
         }
 
+        // var price = getItemUrl(skinName, isStattrak, qualityGrade)
+        // getItemPrice(price)
         $('#CardNumber77').addClass('winning-item'); // green border on winning item
         var win_element = "<div id='added_inventory" + tempCounter + "' class='item " + skinColor + "_item_color' style='background-image: url(" + skinImage + ")'></div>";
         $(win_element).appendTo('.inventory'); //adds winning item to inventory
-        $(getQuality()).appendTo('#added_inventory' + tempCounter);
-        $(getStatTrak()).appendTo('#added_inventory' + tempCounter);
+        var grade = '<div class="weapon_quality">' + qualityGrade + '</div>';
+        $(grade).appendTo('#added_inventory' + tempCounter);
+        var stattrak = '<div class="stattrak_class">StatTrak&trade;</div>';
+        if (isStattrak) {
+            $(stattrak).appendTo('#added_inventory' + tempCounter);
+        }
         tempCounter += 1;
     }, 8500);
     $('.slots').css('margin-left', '-6770px');

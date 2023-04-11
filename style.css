@@ -2,11 +2,21 @@
 @import url(https://fonts.googleapis.com/css2?family=Oswald);
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans);
 body {
-    background-image: url("background.jpg");
-    background-color: #cccccc;
-    background-repeat: no-repeat;
-    background-size: 2134px 1045px;
-    /* background-size: cover; */
+    height: 100%;
+    margin: 0;
+    background-color: black;
+}
+
+.background {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    /* background-image: url("images/ak-awp-wallpaper.jpg"); */
+    opacity: 0.5;
+    background-size: cover;
+    background-position: center;
+    filter: blur(2px);
+    z-index: -1;
 }
 
 .roll-button {
@@ -305,6 +315,28 @@ input:checked+.slider:before {
 }
 
 .money-spent-text {
+    position: relative;
+    font-family: "Alkatra";
+    font-size: 1em;
+    color: rgb(91, 209, 166);
+    /* text-shadow: 1px 1px 1px #f8fc0c69; */
+    margin: 30px;
+    backdrop-filter: blur(20px);
+    text-align: center;
+    border-style: ridge;
+    border-width: 2px;
+    border-color: black;
+    right: 20px;
+    top: -50%;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.item-price-text {
     position: relative;
     font-family: "Alkatra";
     font-size: 1em;
