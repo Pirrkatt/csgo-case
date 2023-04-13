@@ -1,6 +1,7 @@
-enlarge picture
+make everything responsive? (knife sim button in particular)
+change name color on active depending on rarity
+make "duplicates" instead of move div on active click
+add steam link to item?
 
-help;
-fetch steam marketplace api
-fix background when running on live server
-make everything responsive?
+bugs;
+some items not fetching properly from url?

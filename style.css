@@ -1,6 +1,16 @@
 @import url(https://fonts.googleapis.com/css?family=Alkatra);
 @import url(https://fonts.googleapis.com/css2?family=Oswald);
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap');
+
+/* font-family: 'Work Sans',
+    sans-serif;
+    font-weight: 900;
+    font-size: 8vw;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1; */
+
 body {
     height: 100%;
     margin: 0;
@@ -136,9 +146,10 @@ body {
 }
 
 .weapon_quality {
-    position: relative;
-    top: 71px;
-    margin-left: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 0 -2px 2px;
     color: gray;
     font-family: "Alkatra";
     font-size: 0.7em;
@@ -151,14 +162,32 @@ body {
 }
 
 .stattrak_class {
-    position: relative;
-    bottom: 20px;
-    text-align: right;
-    margin: 2px 3px 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1px 3px 0 0;
     /* top right bottom left */
     color: orangered;
     font-family: 'Oswald', sans-serif;
     font-size: 0.7em;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.itemvalue_inv_small {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 3px 2px 0;
+    /* top right bottom left */
+    color: lime;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7em;
+    text-shadow: 0px 0px 20px #000000;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -218,7 +247,34 @@ img {
     background-color: #182a38;
 }
 
+.item-name-text {
+    position: relative;
+    text-align: center;
+    top: 5%;
+    align-items: center;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    font-family: "Alkatra";
+    font-size: 1.8em;
+    text-decoration: underline white;
+    text-transform: uppercase;
+    background: -webkit-linear-gradient(#00ff55 20%, #00ffd5 50%, white 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    opacity: 0;
+}
+
 .inventory>.item:active {
+    box-shadow: 0 0 1px 1px #00ffd5, inset 0 0 1px 1px #00ff55, inset 0 0 200px 100px black, inset 0 0 5px 5px rgb(0, 255, 255);
+    border: none;
     height: 500px;
     width: 500px;
     top: 10%;
@@ -226,7 +282,11 @@ img {
     position: fixed;
     justify-content: center;
     align-items: center;
-    z-index: 5;
+    z-index: -1;
+}
+
+.inventory>.item:active>.item-name-text {
+    opacity: 1;
 }
 
 
@@ -253,7 +313,6 @@ img {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-shadow: 0 0 10px yellow, -1px -1px #000000;
-    ;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -359,19 +418,50 @@ input:checked+.slider:before {
 }
 
 .color-white {
-    /* all: initial; */
     color: white;
-    text-decoration: underline;
+    /* text-decoration: underline; */
+}
+
+.color-gray {
+    color: gray;
+}
+
+.color-orange {
+    color: orange;
 }
 
 .color-green {
     color: rgb(0, 255, 0);
-    text-decoration: underline;
 }
 
 .color-red {
     color: red;
-    text-decoration: underline;
+}
+
+.blue_item_text {
+    color: 6px solid #4b69ff;
+}
+
+.purple_item_text {
+    color: 6px solid #8847ff;
+}
+
+.pink_item_text {
+    color: 6px solid #d32ce6;
+}
+
+.red_item_text {
+    color: 6px solid #eb4b4b;
+}
+
+.yellow_item_text {
+    /* color: 6px solid #ffd700; */
+    background: -webkit-linear-gradient(#ffd700 20%, white 90%);
+    /* border: ridge 7px #ffd700;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-radius: 100%; */
 }
 
 
