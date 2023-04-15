@@ -1,63 +1,107 @@
 @import url(https://fonts.googleapis.com/css?family=Alkatra);
 @import url(https://fonts.googleapis.com/css2?family=Oswald);
 @import url(https://fonts.googleapis.com/css2?family=Noto+Sans);
+* {
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 body {
     height: 100%;
-    margin: 0;
 }
 
 .background {
     position: absolute;
+    background: url(images/background.jpg);
     height: 100%;
     width: 100%;
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     filter: blur(1px);
     z-index: -1;
 }
 
 .case-area {
     position: absolute;
-    /* display: flex; */
-    width: 700px;
-    height: 80%;
-    border: 1px solid;
-    left: 60%;
-    top: 10%;
-}
-
-.choose-case-text {
-    position: relative;
-    text-align: center;
-    font-family: "Nono-Sans", sans-serif;
-    font-size: 2em;
-    text-transform: uppercase;
-}
-
-.case {
-    scale: 0.7;
-    margin: 0;
-    padding: 20px;
-}
-
-#case-gamma2 {
-    position: relative;
-    /* left: 10%; */
-    /* height: 20%; */
-    /* width: 20%; */
-    border: 1px solid black;
-}
-
-.case-aura {
-    position: relative;
-    left: 10%;
-    bottom: 24%;
-    width: 160px;
-    height: 110px;
+    display: grid;
+    /* height: 860px; */
+    max-height: 860px;
+    left: 55%;
+    top: 5%;
+    overflow-y: scroll;
+    box-shadow: 0 0 5px black;
     /* border: 1px solid black; */
 }
 
-.case-aura:hover {
+.case-area::-webkit-scrollbar {
+    width: 3px;
+}
+
+.case-area::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, .3);
+}
+
+.case-area::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(0deg, #55e78d, #0089a1);
+}
+
+.case-area::-webkit-scrollbar-thumb:window-inactive {
+    background-image: linear-gradient(0deg, #55e78d, #0089a1);
+    opacity: .5
+}
+
+.case {
+    position: relative;
+    scale: 0.7;
+    /* border: 1px solid black; */
+    padding-top: 5px;
+    margin: -30px -30px;
+    font-size: 2.5em;
+    display: inline-block;
+}
+
+.case:hover {
     cursor: pointer;
-    box-shadow: 0 0 50px 5px yellow, inset 0 0 600px 0px yellow;
+}
+
+.caption {
+    display: block;
+    /* position: relative; */
+    font-family: "Nono-Sans", sans-serif;
+    font-size: 0.6em;
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 1px 10px #000;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.category-area {
+    position: relative;
+    margin: auto;
+    padding-bottom: 2em;
+    padding-top: 2em;
+    text-align: center;
+}
+
+.category-text {
+    position: relative;
+    font-family: "Nono-Sans", sans-serif;
+    font-size: 2.5em;
+    color: rgb(113, 255, 255);
+    text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-transform: uppercase;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }

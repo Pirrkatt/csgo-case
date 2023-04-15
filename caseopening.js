@@ -3,6 +3,7 @@ var gamma2;
 async function loadGamma2() {
     gamma2 = await (await fetch('./JSON/case-gamma2.json')).json();
 }
+// console.log(document.location.pathname);
 
 $(window).on('load', async function() {
     loadGamma2();
