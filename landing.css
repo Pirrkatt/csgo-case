@@ -14,7 +14,7 @@ body {
 
 .background {
     position: absolute;
-    background: url(images/background.jpg);
+    background: url(images/smoking_terrorist.jpg);
     height: 100%;
     width: 100%;
     background-size: cover;
@@ -22,16 +22,18 @@ body {
     background-repeat: no-repeat;
     filter: blur(1px);
     z-index: -1;
+    box-shadow: inset 0 -20px 80px 20px black;
 }
 
 .case-area {
     position: absolute;
     display: grid;
     /* height: 860px; */
-    max-height: 860px;
+    max-height: 880px;
     left: 55%;
-    top: 5%;
+    top: 3.5%;
     overflow-y: scroll;
+    overflow-x: hidden;
     box-shadow: 0 0 5px black;
     /* border: 1px solid black; */
 }
@@ -61,10 +63,12 @@ body {
     margin: -30px -30px;
     font-size: 2.5em;
     display: inline-block;
+    transition: 0.4s;
 }
 
 .case:hover {
     cursor: pointer;
+    scale: 0.8;
 }
 
 .caption {
@@ -87,7 +91,7 @@ body {
     position: relative;
     margin: auto;
     padding-bottom: 2em;
-    padding-top: 2em;
+    padding-top: 1em;
     text-align: center;
 }
 
@@ -95,7 +99,7 @@ body {
     position: relative;
     font-family: "Nono-Sans", sans-serif;
     font-size: 2.5em;
-    color: rgb(113, 255, 255);
+    color: rgb(113, 255, 219);
     text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
     text-transform: uppercase;
     -webkit-touch-callout: none;

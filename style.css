@@ -21,12 +21,25 @@ body {
     position: absolute;
     height: 100%;
     width: 100%;
-    /* background-image: url("images/ak-awp-wallpaper.jpg"); */
+    /* background: linear-gradient(120deg, #00fff2, #00ffaa, #000000); */
+    background-image: url("images/background.jpg");
     opacity: 0.5;
     background-size: cover;
     background-position: center;
-    filter: blur(2px);
-    z-index: -1;
+    /* filter: hue-rotate(180deg); */
+    filter: blur(1px);
+    transform: rotate(180deg);
+}
+
+.back-arrow {
+    position: absolute;
+    margin: 50px;
+    padding: 15px;
+    border: solid white;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
 }
 
 .roll-button {
@@ -79,7 +92,7 @@ body {
 }
 
 .container {
-    position: absolute;
+    position: relative;
     width: 700px;
     height: 100px;
     top: 50%;
@@ -282,7 +295,6 @@ img {
     position: fixed;
     justify-content: center;
     align-items: center;
-    z-index: -1;
 }
 
 .inventory>.item:active>.item-name-text {
@@ -293,26 +305,28 @@ img {
 /* KNIFE SIMULATION BUTTON */
 
 .sim-container {
-    position: absolute;
-    right: 30%;
-    top: 30%;
+    position: relative;
+    left: 750px;
+    text-align: center;
     /* border: solid #0e0d0d; */
     height: 200px;
     width: 350px;
+    justify-content: center;
+    align-items: center;
 }
 
 .knife-sim-text {
     position: relative;
     top: 50%;
-    left: 17%;
-    color: black;
     font-family: "Alkatra";
-    font-size: 1.7em;
+    font-size: 1.8em;
+    font-weight: 600;
     background: linear-gradient(20deg, #fa5032, #fbff00, #ff0000);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 10px yellow, -1px -1px #000000;
+    -webkit-filter: drop-shadow(2px 2px black) drop-shadow(0 0 6px yellow);
+    filter: drop-shadow(2px 2px black) drop-shadow(0 0 6px yellow);
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -323,11 +337,11 @@ img {
 
 .switch {
     position: relative;
-    left: 35%;
     top: 50%;
     display: inline-block;
     width: 60px;
     height: 34px;
+    cursor: pointer;
 }
 
 .switch input {
@@ -338,7 +352,6 @@ img {
 
 .slider {
     position: absolute;
-    cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
@@ -378,14 +391,8 @@ input:checked+.slider:before {
     font-family: "Alkatra";
     font-size: 1em;
     color: rgb(91, 209, 166);
-    /* text-shadow: 1px 1px 1px #f8fc0c69; */
     margin: 30px;
     backdrop-filter: blur(20px);
-    text-align: center;
-    border-style: ridge;
-    border-width: 2px;
-    border-color: black;
-    right: 20px;
     top: -50%;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -393,6 +400,7 @@ input:checked+.slider:before {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    box-shadow: 0 0 1px 1px #00ffd5, inset 0 0 1px 1px #00ff55, inset 0 0 50px 20px black, inset 0 0 3px 3px rgb(0, 255, 255);
 }
 
 .item-price-text {
@@ -432,10 +440,12 @@ input:checked+.slider:before {
 
 .color-green {
     color: rgb(0, 255, 0);
+    font-weight: 700;
 }
 
 .color-red {
     color: red;
+    font-weight: 700;
 }
 
 .blue_item_text {
@@ -462,6 +472,33 @@ input:checked+.slider:before {
         border-right: none;
         border-top: none;
         border-radius: 100%; */
+}
+
+.case {
+    position: relative;
+    /* border: 1px solid black; */
+    padding-top: 10px;
+    margin: auto;
+    display: inline-block;
+    text-align: center;
+    left: 800px;
+}
+
+.caption {
+    display: block;
+    position: relative;
+    font-family: "Nono-Sans", sans-serif;
+    font-size: 2.5em;
+    /* text-transform: uppercase; */
+    color: white;
+    font-weight: 600;
+    text-shadow: 1px 1px 10px #000;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 

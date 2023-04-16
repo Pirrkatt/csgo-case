@@ -1,19 +1,40 @@
-var gamma2;
+var case_json;
 
-async function loadGamma2() {
-    gamma2 = await (await fetch('./JSON/case-gamma2.json')).json();
+function getCurrentCase() {
+    var path = document.location.pathname
+    path = path.replace('/csgo/open/', '')
+    path = path.replace('.html', '')
+    return path
 }
-// console.log(document.location.pathname);
+
+async function loadCaseJson() {
+    case_json = await (await fetch('../JSON/cases/' + getCurrentCase() + '.json')).json();
+}
 
 $(window).on('load', async function() {
-    loadGamma2();
+    loadCaseJson();
+
+    var title_suffix = " - Trix Case Opening"
+    var case_name = getCurrentCase()
+    var img = '<img src="../images/cases/' + case_name + '.png">'
+    case_name = case_name.replace('_', ' ')
+    let search = case_name.search("esport");
+    if (search >= 0) {
+        case_name = case_name.charAt(0) + case_name.charAt(1).toUpperCase() + case_name.slice(2);
+    } else { case_name = case_name.charAt(0).toUpperCase() + case_name.slice(1); }
+
+    var text = '<span class="caption">' + case_name + '</span>'
+    $(img).appendTo('.case')
+    $(text).appendTo('.case')
+
+    document.title = case_name + title_suffix;
 });
 
 // const response = await fetch("./steam.php?url=" + encodeURIComponent('https://steamcommunity.com/market/priceoverview/?appid=730&currency=1&market_hash_name=StatTrak%E2%84%A2%20M4A1-S%20|%20Hyper%20Beast%20(Minimal%20Wear)'));
 
 async function getItemPrice(url) { // fix
     try {
-        const response = await fetch("./steam.php?url=" + url);
+        const response = await fetch("../steam.php?url=" + url);
         if (response.status == 200) {
             const jsonData = await response.json();
             // console.log(jsonData.median_price);
@@ -134,13 +155,22 @@ function moneySpent(param, price) {
 }
 
 function hideButton() {
-    var button = $('.roll-button')
-    button.css({ cursor: "default", opacity: 0, transition: "opacity 1s" })
     currently_rolling = true
+    document.getElementById("switchToggle").disabled = true;
+
+    var sim_text = $('.knife-sim-text')
+    var switch_button = $('.switch')
+    var roll_button = $('.roll-button')
+    sim_text.css({ opacity: 0, transition: "opacity 1s" })
+    switch_button.css({ cursor: "default", opacity: 0, transition: "opacity 1s" })
+    roll_button.css({ cursor: "default", opacity: 0, transition: "opacity 1s" })
 
     setTimeout(function() {
-        button.css({ cursor: "pointer", opacity: 1, transition: "opacity 1s" })
         currently_rolling = false
+        document.getElementById("switchToggle").disabled = false;
+        sim_text.css({ opacity: 1, transition: "opacity 1s" })
+        switch_button.css({ cursor: "pointer", opacity: 1, transition: "opacity 1s" })
+        roll_button.css({ cursor: "pointer", opacity: 1, transition: "opacity 1s" })
     }, 9200);
 }
 
@@ -179,9 +209,9 @@ function GenerateDrop() {
     for (var z = 0; z < 90; z++) {
         for (x in drop_chance) {
             if (random_array[z] >= (drop_chance[x].min) && random_array[z] <= (drop_chance[x].max)) {
-                var random_drop = randomInArray(gamma2[x])
-                var skin_name = gamma2[x][random_drop][0]
-                var skin_image = gamma2[x][random_drop][1]
+                var random_drop = randomInArray(case_json[x])
+                var skin_name = case_json[x][random_drop][0]
+                var skin_image = case_json[x][random_drop][1]
                 element = '<div id="CardNumber' + z + '" class="item ' + x + '_item_color" style="background-image:url(' + skin_image + ');"></div>';
                 if (z === 77) {
                     var winningSkin = skin_name
